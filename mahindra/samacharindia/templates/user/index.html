@@ -1,0 +1,63 @@
+pypython manage.py runserver
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content %}
+
+<!------notification----->
+<div class="alert bg-success">
+  <marquee>
+    {% if c %}
+    {% for x in c%}
+    <img src="{% static 'images/new.gif'%}" style="max-height:30px"><big>{{x.ndes}}</big> <big>{{x.ndes}}</big> ||
+
+    {% endfor %}
+    {% endif%}
+  </marquee>
+</div>
+
+<!--------endnotification------->
+
+<div class="row py-5">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <div class="row">
+      {% if a %}
+      {% for x in a%}
+      <div class="col-sm-3">
+<div class="card">
+  <img src="/{{x.cpic}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <a href="/user/news?msg={{x.id}}" class="btn btn-danger">{{x.cname}}</a>
+  </div>
+</div>
+      </div>
+      {% endfor %}
+      {% endif %}
+
+    </div>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row latestnews bg-light p-3">
+  <h2 class="text-center"> Latest <b class="text-danger">News</b></h2>
+  {% if b %}
+  {% for x in b %}
+  <div class="col-sm-3">
+<div class="card">
+  <img src="/{{x.npic}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{x.ncategory}}</h5>
+    <b>City :</b> {{x.ncity}} <br/>
+    <h5>{{x.nhead}}</h5>
+    <p class="card-text"></p>
+    <b>Posted Date :</b> {{x.ndate}}<br/>
+    <a href="/user/viewmore?msg={{x.id}}" class="btn btn-danger">View More</a>
+  </div>
+</div>
+  </div>
+  {%endfor%}
+  {%endif%}
+
+</div>
+{%endblock%}

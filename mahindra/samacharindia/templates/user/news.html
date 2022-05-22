@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+{%block content %}
+<div class="row">
+    <h2 class="text-center text-danger">News </h2>
+    <div class="col-sm-12 w-25 mx-auto">
+        <form method="get">
+        <div class="input-group mb-3">
+  <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <span class="input-group-text bg-danger" id="basic-addon2"><button style="background:none;border:none;color:white;"><i class="fa fa-search"></i></button></span>
+</div>
+        </form>
+    </div>
+</div>
+<div class="row">
+<h2 class="text-center text-danger">News </h2>
+    <div class="col-sm-2">
+        <ul class="list-group">
+  <li class="list-group-item active bg-danger h2" aria-current="true">Category</li>
+            {% if cat %}
+            {% for x in cat %}
+  <a style="text-decoration:none;" href="/user/news?msg={{x.id}}"><li class="list-group-item">{{x.cname}}</li></a>
+            {% endfor %}
+            {%endif%}
+            <a style="text-decoration:none;" href="/user/news"><li class="list-group-item">all data</li></a>
+
+</ul>
+    </div>
+    <div class="col-sm-8">
+<div class="row bg-light">
+    {% if n %}
+    {%for a in n%}
+    <div class="col-sm-4">
+<div class="card">
+  <img src="/{{a.npic}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{a.ncategory}}</h5>
+    <h6 class="card-title">{{a.nhead}}</h6>
+      <b>City : </b> {{a.ncity}}
+
+    <!--<p class="card-text">{{a.ndes | safe}}</p>-->
+    <a href="/user/viewmore?msg={{a.id}}" class="btn btn-danger">View More</a>
+      <b class="disabled"> Posted Date : </b>{{a.ndate}}
+  </div>
+</div>
+    </div>
+    {%endfor%}
+   {%endif%}
+</div>
+    </div>
+    <div class="col-sm-2">
+        <ul class="list-group">
+  <li class="list-group-item active bg-danger h2" aria-current="true">City</li>
+             {% if city %}
+              {% for x in city %}
+            <a style="" href="/user/news?cid={{x.id}}"><li class="list-group-item">{{x.city}}</li></a>
+             {% endfor %}
+             {% endif %}
+  <li class="list-group-item">All News</li>
+</ul>
+    </div>
+    </div>
+{% endblock%}

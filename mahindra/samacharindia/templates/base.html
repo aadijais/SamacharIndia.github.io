@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+{% load static %}
+<div lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Samachar India</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <style>
+    .logo
+    {
+    font-size:28px;
+    }
+    .content
+    {
+    min-height:500px;
+    }
+    .kl
+    {
+    height:28px;
+    width:28px;
+    background:#dc3545;
+    border:2px solid white;
+    text-align:center;
+    padding-top:1%;
+    }
+    .kl:hover
+    {
+    transform:rotate(360deg);
+    transition:all ease 1s;
+    color:#dc3545;
+    }
+   .ufooter
+    {
+    min-height:400px;
+    background:black;
+
+    }
+    .bfooter
+    {
+    min-height:1px;
+    background:red;
+    margin-top:1px;
+    }
+    .header
+    {
+    min-height:55px;
+    }
+    .nav-item:hover
+    {
+
+    transform:scale(o.5);
+    box-shadow:1.5px 1.5px 1.5px red;
+
+
+    }
+    </style>
+
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row bg-danger py-2 text-center text-light">
+        <div class="col-sm-3 ">
+            <i class="fa fa-phone kl"></i> +91-8577979024
+        </div>
+        <div class="col-sm-3">
+            <i class="fa fa-envelope kl"></i> aadij563@gmail.com
+        </div>
+        <div class="col-sm-3"><b>Welcome to Samachar India</b></div>
+        <div class="col-sm-3 ">
+            <i class="fa fa-facebook kl"></i>
+            <i class="fa fa-whatsapp kl"></i>
+            <i class="fa fa-twitter kl"></i>
+            <i class="fa fa-youtube kl"></i>
+            <i class="fa fa-instagram
+             kl"></i>
+        </div>
+    </div>
+</div>
+<div class="row">
+   <!--<h1 style="text-align:center;font-size:60px;"><b>  Samachar</b> <b class="text-danger">India</b><b><i class="fa fa-bullhorn"></i></b></h1>-->
+</div>
+<div class="row header bg-light py-1" style="box-shadow:3px 3px 10px #e3e3e3">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+        <div class="col-sm-12 logo text-center">
+           <h1><b>  Samachar</b> <b class="text-danger">India</b><b><i class="fa fa-bullhorn"></i></b></h1>
+        </div>
+
+            </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<div class="row header bg-light py-1">
+    <div class="col-sm-12 menu ps-5 " >
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+  <div class="container-fluid" >
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse st" id="navbarNav" >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active  text-danger" aria-current="page" href="/user/home/"><i class="fa fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/user/aboutus/"><i class="fas fa-"></i>
+ About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/user/news/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> View News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  " href="/user/video/"><i class="fa fa-video-camera" aria-hidden="true"></i> News Video</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link hvr" href="/user/contactus/"><i class="fa fa-phone"></i> Contact Us</a>
+        </li>
+            <li class="nav-item">
+          <a class="nav-link " href="/admin/"><i class="fa fa-key"></i> Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+        </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+<div class="row ufooter">
+    <div class="col-sm-12">
+    < class="container">
+        <div class="col-sm-4 p-5"   style="float:left">
+            <img src="{% static 'images/singh.png' %}"style="height:100px;width:350px;padding-top:20px"/>
+            <img src="{% static 'images/kalyan.jfif' %}"style="height:100px;width:350px;padding-top:20px"/>
+            <img src="{% static 'images/love.jfif' %}"style="height:100px;width:350px;padding-top:20px"/>
+        </div>
+        <div class="col-sm-4 "style="float:left;padding-top:70px">
+            <span><h3><span style="color:white;padding-left:150px">Contact</span> <b class="text-danger">Address</b></h3></span>
+    <center><hr style="color:#dc3545;width:150px;height:2px"/></center>
+            <h5 class="text-light"> <i class="fa fa-home " style="color:yellow;"> </i> GGP Lucknow</br>Lucknow,Uttar Pradesh(226021)
+                </br></br></br>
+                <i class="fa fa-phone" style="color:yellow"></i> +91-8577979024 </br>
+                <i class="fa fa-phone" style="color:yellow"></i> +91-8081327024 </br>
+             <i class="fa fa-envelope" style="color:yellow"></i> aadij563@gmail.com
+            </h5>
+        </div>
+        <div class="col-sm-4 " style="float:left">
+ <img src="{% static 'images/singh.png' %}" style="height:100px;width:350px;padding-top:20px"/>
+              <h4 class="text-light">In this project there is a single user admin
+              Admin can add the news,admin can see the news, and admin can
+                  change the password and also admin
+              </h4>
+            <span><h3 class="text-danger">Stay Contected</h3></span>
+            <i class="fa fa-facebook" style="color:yellow"></i>
+            <i class="fa fa-twitter" style="color:yellow"></i>
+            <i class="fa fa-instagram" style="color:yellow"></i>
+            <i class="fa fa-whatsapp" style="color:yellow"></i>
+            <i class="fa fa-youtube" style="color:yellow"></i>
+
+
+        </div>
+    </div>
+    </div>
+<div class="row bfooter">
+
+    <div class="col-sm-12 py-2">
+        <center>
+            <h6 class="text-light"><b class="text-secondary">2021</b>  Samachar India 2021 || Developed <b class="text-secondary"> By Riya Jaiswal  </b>  || Privacy and Policy</h6>
+        </center>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

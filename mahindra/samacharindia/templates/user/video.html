@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{%block content %}
+<div class="row">
+<h2 class="text-center text-danger">News</h2>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+     <div class="row bg-light py-3" style="min-height:300px;">
+         <div class="col-sm-10">
+             {% if a %}
+             {% for x in a %}
+             <div class="card mb-3" >
+  <div class="row g-0">
+    <div class="col-md-4 p-2">
+     <iframe class="w-100" src="{{x.vlink}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{x.vtitle}}</h5>
+          <b>{{x.vcategory}}</b>
+        <p class="card-text">{{x.vnews | safe}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <i class="btn btn-outline-danger"><b>City : </b>{{x.vcity}}</i>
+      </div>
+    </div>
+  </div>
+</div>
+             {% endfor %}
+             {% endif%}
+         </div>
+         <div class="col-sm-2">
+             <ul class="list-group">
+  <li class="list-group-item active bg-danger" aria-current="true">NEWS CATEGORY</li>
+                           {% if b%}
+                           {% for x in b %}
+                 <a href="/user/video?cid={{x.id}}" style="text-decoration:none;"><li class="list-group-item">{{x.cname}}</li></a>
+                 {% endfor %}
+                   {% endif %}
+                 <a href="/user/video" style="text-decoration:none;">   <li class="list-group-item">All News</li></a>
+</ul>
+         </div>
+     </div>
+
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock%}

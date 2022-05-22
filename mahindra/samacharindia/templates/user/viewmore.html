@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="row py-4">
+<h2 class="text-center">Details About <b class="text-danger">News</b></h2>
+<div class="col-sm-2"></div>
+<div class="col-sm-8 bg-light" style="min-height:300px">'
+{% if data %}
+  {% for a in data %}
+    <div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{a.npic}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{a.nhead}}</h5>
+        <h6 class="card-title">{{a.ncategory}}</h6>
+          <b>City :</b> {{a.ncity}}
+        <p class="card-text">{{a.ndes | safe}}</p>
+        <p class="card-text"><small class="text-muted"><b>Posted Date :</b> {{a.ndate}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+  {% endfor%}
+  {% endif%}
+</div>
+<div class="col-sm-2"></div>
+</div>
+    {% endblock %}
